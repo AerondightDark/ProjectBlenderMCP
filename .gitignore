@@ -9,3 +9,8 @@ __pycache__/
 
 # ---- 自动渲染预览图（由 run.py 生成，可由 .blend / 脚本重现） ----
 preview_*.png
+
+# ---- 摩托车建模的全过程渲染（由 build_*.py 重现，约 60 MB） ----
+motorcycle/render/
+
+# 说明: refs/ 下均为外部取回的输入资料(照片/网页快照), 一律保留跟踪

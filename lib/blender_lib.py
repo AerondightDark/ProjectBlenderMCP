@@ -1,5 +1,6 @@
-"""天坛祈年殿建模工具库 (Blender 5.x)
-几何基础: 旋转体(lathe) / 环形阵列 / 圆柱棱柱
+"""通用 Blender 建模工具库 (Blender 5.x)
+几何基础: 旋转体(lathe) / 环形阵列 / 圆柱棱柱 / 材质
+所有模型共用, 不属于任一具体模型。
 """
 import bpy
 import bmesh

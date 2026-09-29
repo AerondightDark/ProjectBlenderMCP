@@ -1,0 +1,11 @@
+# ---- Python ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ---- Blender 自动备份 ----
+*.blend1
+
+# ---- 自动渲染预览图（由 run.py 生成，可由 .blend / 脚本重现） ----
+preview_*.png

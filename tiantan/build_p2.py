@@ -3,18 +3,24 @@
 """
 import bpy
 import math
+import os
 import sys
 import importlib
 
-ROOT = r"D:\work\AI\BlenderMCPTest\try1"
-sys.path.insert(0, ROOT)
-import tiantan_lib as L
+try:
+    _HERE = os.path.dirname(os.path.abspath(__file__))
+    ROOT = os.path.dirname(_HERE)            # 仓库根: .../try1
+except NameError:                           # 经 MCP 字符串执行时无 __file__
+    ROOT = r"D:\work\AI\BlenderMCPTest\try1"
+MODEL = os.path.join(ROOT, "tiantan")
+sys.path.insert(0, os.path.join(ROOT, "lib"))
+import blender_lib as L
 importlib.reload(L)
-from tiantan_lib import TAU
+from blender_lib import TAU
 
 # ---- 重新构建地基/台基/柱网, 保证可重复运行 ----
 ns = {}
-exec(compile(open(ROOT + r"\tiantan_build_p1.py", encoding="utf-8").read(),
+exec(compile(open(os.path.join(MODEL, "build_p1.py"), encoding="utf-8").read(),
              "p1", "exec"), ns)
 COLL, MAT = ns["COLL"], ns["MAT"]
 PLATFORM_TOP = ns["PLATFORM_TOP"]

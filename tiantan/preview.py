@@ -1,9 +1,13 @@
 """设置相机/灯光/渲染环境并输出预览图 (不修改建筑本体)"""
 import bpy
 import math
+import os
 from mathutils import Vector
 
-OUT = r"D:\work\AI\BlenderMCPTest\try1"
+try:
+    OUT = os.path.dirname(os.path.abspath(__file__))   # 本模型目录
+except NameError:                                       # 经 MCP 字符串执行时无 __file__
+    OUT = r"D:\work\AI\BlenderMCPTest\try1\tiantan"
 TARGET = (0.0, 0.0, 17.5)
 
 

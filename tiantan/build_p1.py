@@ -1,11 +1,17 @@
 """天坛祈年殿 - 第一部分: 材质 / 三层汉白玉台基 / 栏杆 / 红柱"""
 import bpy
 import math
+import os
 import sys
 
-sys.path.insert(0, r"D:\work\AI\BlenderMCPTest\try1")
-import tiantan_lib as L
-from tiantan_lib import TAU
+try:
+    _HERE = os.path.dirname(os.path.abspath(__file__))
+    LIB = os.path.join(os.path.dirname(_HERE), "lib")
+except NameError:                       # 经 MCP 字符串执行时无 __file__
+    LIB = r"D:\work\AI\BlenderMCPTest\try1\lib"
+sys.path.insert(0, LIB)
+import blender_lib as L
+from blender_lib import TAU
 
 # ------------------------------------------------------------ 初始化
 L.clear_scene()
